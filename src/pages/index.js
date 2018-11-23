@@ -1,15 +1,21 @@
 import React from 'react'
-import { Link } from 'gatsby'
-
 import Layout from '../components/layout'
+import Credit from '../components/credit'
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-
-    <Link to="/page-2/">Go to page 2</Link>
+    <h1 id="welcome">welcome to our cookbook</h1>
+    <div className="box">
+      <div className="pan">
+        <div className="handle">
+          <div className="hole"></div>
+        </div>
+        <div className="egg">
+          <div className="yolk"></div>
+        </div>
+      </div>
+    </div>
+    <Credit />
   </Layout>
 )
 
