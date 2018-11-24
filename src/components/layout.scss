@@ -17,9 +17,14 @@ body{
 
 #header {
   font-family: 'Fredoka One', cursive;
-  color: $sky;
-  line-height: 0.6;
+  background-color: $white;
+  width: 50%;
+  color: $white;
+  line-height: 0.5;
   font-size: 1.7vw;
+  letter-spacing: 1.5px;
+  border-bottom-right-radius: 0.5vw; 
+  border-top-right-radius: 0.5vw; 
 }
 
 a {
@@ -33,6 +38,7 @@ a {
   font-family: 'Fredoka One', cursive;
   color: $gray;
   animation: moveInLeft 1s ease-out;
+  letter-spacing: 0.8px;
 }
 
 .page {
@@ -62,7 +68,7 @@ a {
   background: $grafit;
   width: 92%;
   height: 97%;
-  animation: shake 6s linear infinite;
+  animation: shake 8s linear infinite;
   &:active {
     animation: push 0.6s ease-out;
     .egg {

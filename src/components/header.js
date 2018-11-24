@@ -5,7 +5,6 @@ import './layout.css'
 const Header = ({ siteTitle }) => (
   <div id="header"
     style={{
-      background: 'white',
       marginBottom: '1.45rem',
     }}
   >
@@ -16,7 +15,7 @@ const Header = ({ siteTitle }) => (
         padding: '1.45rem 1.0875rem',
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 style={{ margin: 0, color: 'white' }}>
         <Link
           to="/"
           style={{
