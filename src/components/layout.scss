@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa|Fredoka+One');
 
-$grafit: #3E3E3F;
-$gray:   #656567;
-$white:  #ffffff;
-$sky:    #b8defa;
-$yolk:   #F0993C;
+$grafit:    #3E3E3F;
+$gray:      #656567;
+$white:     #ffffff;
+$sky:       #b8defa;
+$yolk:      #F0993C;
+$crust:     #e6be99;
+$cheese:    #ffeb99;
+$pepperoni: #c62828;
+$specks:    #b71c1c;
+$basil:     #006600;
+$facebook:  #3B5998;
 
 html {
   -ms-text-size-adjust: 100%;
@@ -35,15 +41,30 @@ body{
 
 a {
   text-decoration: none;
+  color: $gray;
 }
 
 #welcome {
   margin: 10vh 2vw 5vh 2vw;
-  font-size: 4.7vw;
+  font-size: 75px;
   font-family: 'Fredoka One', cursive;
   color: $gray;
-  animation: moveInLeft 1s ease-out;
   letter-spacing: 0.8px;
+  animation: moveInLeft 1s ease-out;
+}
+
+#about {
+  font-size: 45px;
+  font-family: 'Fredoka One', cursive;
+  color: $white;
+  letter-spacing: 0.7px;
+}
+
+#logIn {
+  font-size: 35px;
+  font-family: 'Fredoka One', cursive;
+  color: $white;
+  letter-spacing: 0.6px;
 }
 
 .page {
@@ -57,6 +78,8 @@ a {
   align-items: center;
   letter-spacing: 0.1vw;
 }
+
+/* --- egg in a pan --- */
 
 .box{
   position: relative;
@@ -127,6 +150,8 @@ a {
   left: 75%;
 }
 
+/* --- author credit --- */
+
 .mike {
   position: absolute;
   bottom: 2vh;
@@ -135,6 +160,210 @@ a {
   font-family: 'Fredoka One', cursive;
   font-size: 12px;
 }
+
+/* --- pizza --- */
+
+@mixin general($height, $width, $bottom, $right, $color, $radius) {
+  position: absolute;
+  height: $height;
+  width: $width;
+  bottom: $bottom;
+  right: $right;
+  background: $color;
+  border-radius: $radius;
+}
+
+@mixin speck($size,$top,$left,$color) {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: $size;
+  height: $size;
+  background: $color;
+  border-radius: 50%;
+  left: $left;
+  top: $top;
+}
+
+#corner {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.pizza {
+  position: relative;
+  display: flex;
+  padding: 0;
+  width: 600px;
+  height: 450px;
+}
+
+.crust {
+  @include general(60%, 45%, 0%, 0%, red, 50%);
+  -moz-border-radius: 270px 0 0 0;
+  border-radius: 270px 0 0 0;
+  background: $crust;
+  position: absolute;
+}
+.slice {
+  @include general(54%, 41%, 0%, 0%, $cheese, 50%);
+  -moz-border-radius: 270px 0 0 0;
+  border-radius: 270px 0 0 0;
+}
+.salami1 {
+  position: absolute;
+  animation: bubble 1.5s linear alternate infinite;
+  @include general(20%, 20%, 10%, 63%, $pepperoni, 50%);
+  border: 3px solid $specks;
+  &:before {
+    @include speck(10px,25%,10%,$specks);
+  }
+  &:after {
+    @include speck(10px,70%,30%,$specks);
+  }
+}
+.salami2 {
+  @include general(20%, 20%, 60%, 23%, $pepperoni, 50%);
+  border: 3px solid $specks;
+  animation: bubble 2.5s linear alternate infinite;
+  &:before {
+    @include speck(10px,65%,70%,$specks);
+  }
+  &:after {
+    @include speck(10px,30%,30%,$specks);
+  }
+}
+.salami3 {
+  @include general(20%, 20%, 20%, 10%, $pepperoni, 50%);
+  border: 3px solid $specks;
+  animation: bubble 2s linear alternate infinite;
+  &:before {
+    @include speck(10px,65%,70%,$specks);
+  }
+  &:after {
+    @include speck(10px,30%,50%,$specks);
+  }
+}
+.basil1 {
+  @include speck(20px, 50%, 30%, $basil);
+}
+.basil2 {
+  @include speck(20px, 65%, 50%, $basil);
+}
+.basil3 {
+  @include speck(20px, 7%, 78%, $basil);
+}
+.basil4 {
+  @include speck(20px, 85%, 55%, $basil);
+}
+
+/* --- login form --- */
+
+.grid {
+  font-family: 'Fredoka One', cursive;
+  display: flex;
+  flex-direction: column;
+  max-width: 95%;
+  width: 600px;
+}
+
+input {
+  font-family: 'Fredoka One', cursive;
+  font-size: 17px;
+  border: none;
+  margin: 0;
+  padding: 1vw;
+}
+
+label, #or {
+  color: darken($crust, 10%);
+  font-size: 17px;
+}
+
+#login fieldset {
+	border-radius: 0 0 20px 20px;
+	padding: 20px 26px;
+}
+
+#login fieldset p {
+  color: darken($crust, 10%);
+	margin-bottom: 14px;
+}
+
+#login form p:last-child {
+	margin-bottom: 0;
+}
+
+#login form input {
+  border-radius: 3px;
+}
+
+::placeholder {
+  color: $sky;
+}
+
+#login form input[type="email"], #login form input[type="password"] {
+  font-size: 17px;
+  color: $sky;
+  line-height: 1.5;
+	padding: 4px 10px;
+	width: 100%;
+}
+
+#login form input[type="submit"] {
+  background: $crust;
+  font-family: 'Fredoka One', cursive;
+	color: $white;
+	display: block;
+	margin: 0 auto;
+	padding: 5.5px 35px 5.5px 25px;
+  width: 100px;
+  cursor: pointer;
+}
+
+button {
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+#fb {
+  font-family: 'Fredoka One', cursive;
+  padding: 5.5px 35px 5.5px 25px;
+  background-color: $facebook;
+  color: $white;
+  font-size: 17px;
+}
+
+#gp {
+  font-family: 'Fredoka One', cursive;
+  padding: 5.5px 35px 5.5px 25px;
+  background-color: $pepperoni;
+  color: $white;
+  font-size: 17px;
+  margin-left: 3vw;
+}
+
+.iconFB {  
+  background: url(https://s.cdpn.io/6035/fb_login_sprite.png) no-repeat;
+  width: 10px;
+  height: 17px;
+  float: left;
+  margin: 3px 20px 3px 0;
+}
+
+.iconGP {
+//  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png)  no-repeat;
+  width: 15px;
+  height: 17px;
+  float: left;
+  margin: 3px 20px 3px 0;
+  padding-right: 4px;
+}
+
+/* --- animation --- */
 
 @keyframes moveInLeft {
   0% {
@@ -155,11 +384,11 @@ a {
 @keyframes bubble {
   0% {
     transform: rotate(0)
-      scale(0.98);
+      scale(0.97);
   }
   10% {
     transform: rotate(0)
-      scale(1.01);
+      scale(1.02);
   }
   20% {
     transform: rotate(2deg)
