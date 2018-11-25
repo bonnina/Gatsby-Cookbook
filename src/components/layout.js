@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
         </Helmet>
 
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header />
         <div className="layout">
           {children}
         </div>
