@@ -18,7 +18,7 @@ const NotFoundPage = () => (
        </div>
        <span>4</span>
     </div>
-    <Credit />
+    <Credit word="emoji" link="https://codepen.io/mikemang" name="Mike Mangialardi" />
   </Layout>
 )
 

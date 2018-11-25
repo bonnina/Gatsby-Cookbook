@@ -15,7 +15,7 @@ const IndexPage = () => (
         </div>
       </div>
     </div>
-    <Credit />
+    <Credit word="emoji" link="https://codepen.io/mikemang" name="Mike Mangialardi" />
   </Layout>
 )
 
