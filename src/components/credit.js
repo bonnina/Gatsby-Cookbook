@@ -1,7 +1,8 @@
 import React from 'react'
 
 const Credit = (props) => (
-  <div className="mike">emoji by <a href="https://codepen.io/mikemang" target="_blank" rel="noopener noreferrer"> Mike Mangialardi </a></div>
+  <div className="mike">{props.word} by <a href={props.link} target="_blank" rel="noopener noreferrer"> {props.name} </a></div>
 )
 
 export default Credit
+
