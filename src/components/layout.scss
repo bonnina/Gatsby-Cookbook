@@ -15,21 +15,26 @@ body{
   background: $sky;
 }
 
+.layout {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+}
+
 #header {
   font-family: 'Fredoka One', cursive;
   background-color: $white;
   width: 50%;
-  color: $white;
-  line-height: 0.5;
+  padding: 0.6vh 0 0.6vh 1vw;
   font-size: 1.7vw;
   letter-spacing: 1.5px;
   border-bottom-right-radius: 0.5vw; 
   border-top-right-radius: 0.5vw; 
+  color: $sky;
 }
 
 a {
   text-decoration: none;
-  color: $gray;
 }
 
 #welcome {
