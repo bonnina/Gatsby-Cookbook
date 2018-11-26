@@ -19,6 +19,7 @@ html {
 
 body{
   background: $sky;
+  font-family: 'Fredoka One', cursive;
 }
 
 .layout {
@@ -27,8 +28,17 @@ body{
   padding: 0px 1.0875rem 1.45rem;
 }
 
+.recList {
+  animation: moveInLeft 1s ease-out;
+}
+
+.recipePost {
+  margin: 5vw auto;
+  max-width: 1060px;
+  animation: moveInLeft 1s ease-out;
+}
+
 #header {
-  font-family: 'Fredoka One', cursive;
   background-color: $white;
   width: 50%;
   padding: 0.6vh 0 0.6vh 1vw;
@@ -47,7 +57,6 @@ a {
 #welcome {
   margin: 10vh 2vw 5vh 2vw;
   font-size: 75px;
-  font-family: 'Fredoka One', cursive;
   color: $gray;
   letter-spacing: 0.8px;
   animation: moveInLeft 1s ease-out;
@@ -55,23 +64,32 @@ a {
 
 #about {
   font-size: 45px;
-  font-family: 'Fredoka One', cursive;
   color: $white;
   letter-spacing: 0.7px;
 }
 
-#logIn {
+#logIn, .recHeader {
   font-size: 35px;
-  font-family: 'Fredoka One', cursive;
   color: $white;
   letter-spacing: 0.6px;
+}
+
+small {
+  color: $pepperoni;
+}
+
+.text {
+  color: darken($crust, 20%);
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 50;
+  text-align: justify;
 }
 
 .page {
   margin: 10vh 5vw 0 5vw;
   color: $white;
   font-size: 22vw;
-  font-family: 'Fredoka One', cursive;
   line-height: 1.2;
   display: flex;
   flex-wrap: wrap;
@@ -157,7 +175,6 @@ a {
   bottom: 2vh;
   left: 44vw;
   color: $gray; 
-  font-family: 'Fredoka One', cursive;
   font-size: 12px;
 }
 
@@ -262,7 +279,6 @@ a {
 /* --- login form --- */
 
 .grid {
-  font-family: 'Fredoka One', cursive;
   display: flex;
   flex-direction: column;
   max-width: 95%;
@@ -287,7 +303,7 @@ label, #or {
 	padding: 20px 26px;
 }
 
-#login fieldset p {
+#login form p {
   color: darken($crust, 10%);
 	margin-bottom: 14px;
 }
@@ -313,11 +329,11 @@ label, #or {
 }
 
 #login form input[type="submit"] {
-  background: $crust;
+  background: darken($crust, 10%);
   font-family: 'Fredoka One', cursive;
 	color: $white;
 	display: block;
-	margin: 0 auto;
+	margin: 40px auto -20px auto;
 	padding: 5.5px 35px 5.5px 25px;
   width: 100px;
   cursor: pointer;

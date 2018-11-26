@@ -6,6 +6,7 @@ html {
 
 body {
   background: #b8defa;
+  font-family: 'Fredoka One', cursive;
 }
 
 .layout {
@@ -14,8 +15,19 @@ body {
   padding: 0px 1.0875rem 1.45rem;
 }
 
+.recList {
+  -webkit-animation: moveInLeft 1s ease-out;
+          animation: moveInLeft 1s ease-out;
+}
+
+.recipePost {
+  margin: 5vw auto;
+  max-width: 1060px;
+  -webkit-animation: moveInLeft 1s ease-out;
+          animation: moveInLeft 1s ease-out;
+}
+
 #header {
-  font-family: 'Fredoka One', cursive;
   background-color: #ffffff;
   width: 50%;
   padding: 0.6vh 0 0.6vh 1vw;
@@ -34,7 +46,6 @@ a {
 #welcome {
   margin: 10vh 2vw 5vh 2vw;
   font-size: 75px;
-  font-family: 'Fredoka One', cursive;
   color: #656567;
   letter-spacing: 0.8px;
   -webkit-animation: moveInLeft 1s ease-out;
@@ -43,23 +54,32 @@ a {
 
 #about {
   font-size: 45px;
-  font-family: 'Fredoka One', cursive;
   color: #ffffff;
   letter-spacing: 0.7px;
 }
 
-#logIn {
+#logIn, .recHeader {
   font-size: 35px;
-  font-family: 'Fredoka One', cursive;
   color: #ffffff;
   letter-spacing: 0.6px;
+}
+
+small {
+  color: #c62828;
+}
+
+.text {
+  color: #d28a47;
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 50;
+  text-align: justify;
 }
 
 .page {
   margin: 10vh 5vw 0 5vw;
   color: #ffffff;
   font-size: 22vw;
-  font-family: 'Fredoka One', cursive;
   line-height: 1.2;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -158,7 +178,6 @@ a {
   bottom: 2vh;
   left: 44vw;
   color: #656567;
-  font-family: 'Fredoka One', cursive;
   font-size: 12px;
 }
 
@@ -366,7 +385,6 @@ a {
 
 /* --- login form --- */
 .grid {
-  font-family: 'Fredoka One', cursive;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -396,7 +414,7 @@ label, #or {
   padding: 20px 26px;
 }
 
-#login fieldset p {
+#login form p {
   color: #dca470;
   margin-bottom: 14px;
 }
@@ -434,11 +452,11 @@ label, #or {
 }
 
 #login form input[type="submit"] {
-  background: #e6be99;
+  background: #dca470;
   font-family: 'Fredoka One', cursive;
   color: #ffffff;
   display: block;
-  margin: 0 auto;
+  margin: 40px auto -20px auto;
   padding: 5.5px 35px 5.5px 25px;
   width: 100px;
   cursor: pointer;
