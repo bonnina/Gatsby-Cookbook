@@ -32,8 +32,8 @@ const Header = () => (
         <ItemLink to="/about">
           about
         </ItemLink>
-        <ItemLink to="/recipes">
-          recipes
+        <ItemLink to="/contact">
+          contact
         </ItemLink>
       </ul>
   </div>
