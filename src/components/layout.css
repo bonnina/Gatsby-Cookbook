@@ -404,7 +404,7 @@ input {
   padding: 1vw;
 }
 
-label, #or {
+#or {
   color: #dca470;
   font-size: 17px;
 }
@@ -414,9 +414,8 @@ label, #or {
   padding: 20px 26px;
 }
 
-#login form p {
-  color: #dca470;
-  margin-bottom: 14px;
+#login form {
+  margin-top: 40px;
 }
 
 #login form p:last-child {
@@ -443,12 +442,13 @@ label, #or {
   color: #b8defa;
 }
 
-#login form input[type="email"], #login form input[type="password"] {
+#login form input[type="text"], #login form input[type="password"] {
   font-size: 17px;
   color: #b8defa;
   line-height: 1.5;
   padding: 4px 10px;
   width: 100%;
+  margin-bottom: 14px;
 }
 
 #login form input[type="submit"] {
