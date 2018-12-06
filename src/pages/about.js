@@ -1,24 +1,78 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Credit from '../components/credit'
+import { navigate } from "gatsby"
+import axios from "axios";
+const API_URL = "http://localhost:3001";
 
-const About = () => (
-  <Layout>
+class About extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: "",
+      password: ""
+    }
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    axios.post(`${API_URL}/signup`, {
+      username: this.state.username,
+      password: this.state.password
+    })
+    .then(res =>  {
+      console.log(res.data);
+      if (res.data.token) {
+        localStorage.setItem("token", res.data.token);
+        navigate('/recipes');
+      } else {
+          alert('Sorry, this username alredy exists')
+        }
+    })
+    .catch(err => {
+      console.log(err);
+      alert('Sorry, this username alredy exists')
+    });
+  }
+  
+  render() {
+    return (
+    <Layout>
     <p id="about">
       We are passionate about cooking and sharing our recipes with the world.
     </p>
     <p id="logIn">
-      Please log in to view all recipes.
+      Please log in to view the recipes.
     </p>
 
     <div className="grid">
       <div id="login">
         <form>
-            <p><label htmlFor="email"> e-mail address </label></p>
-            <p><input type="email" id="email" placeholder="mail@address.com"/></p>
-            <p><label htmlFor="password"> password </label></p>
-            <p><input type="password" id="password" placeholder="password"/></p>
-            <p><input type="submit" value="Sign In"/></p>
+            <input 
+                type="text" 
+                name="username"
+                id="name" 
+                placeholder="username"
+                required
+                onChange={this.handleChange}
+                />
+            <input 
+                type="password" 
+                name="password"
+                id="password" 
+                placeholder="password"
+                required
+                onChange={this.handleChange}
+                />
+            <p><input type="submit" value="Sign In" onClick={this.handleFormSubmit} /></p>
         </form>
             <p id="or"> or </p>
             <button id="fb"><span className="iconFB"></span> continue with facebook </button>
@@ -41,7 +95,9 @@ const About = () => (
       </div>
     </div>
     <Credit word="pizza" link="https://codepen.io/feuerbird29" name="Ana Toma" />
-   </Layout>
-)
+    </Layout>
+    )
+  }
+}
 
 export default About
