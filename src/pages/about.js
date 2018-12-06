@@ -17,7 +17,7 @@ class About extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: this.sanitize(e.target.value)
     })
   }
 
@@ -41,6 +41,19 @@ class About extends React.Component {
       console.log(err);
       alert('Sorry, this username alredy exists')
     });
+  }
+
+  sanitize(string) {  
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#x27;',
+        "/": '&#x2F;',
+    };
+    const reg = /[&<>"'/]/ig;
+    return string.replace(reg, (match) => (map[match]));
   }
   
   render() {
