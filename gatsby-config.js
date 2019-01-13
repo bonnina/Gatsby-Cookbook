@@ -30,6 +30,7 @@ module.exports = {
         name: 'pages'
       }
     },
+    'gatsby-plugin-layout',
     'gatsby-transformer-remark',
     'gatsby-plugin-offline',
   ],
