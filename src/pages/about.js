@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../components/layout'
 import Credit from '../components/credit'
 import { navigate } from "gatsby"
 import axios from "axios";
@@ -58,7 +57,7 @@ class About extends React.Component {
   
   render() {
     return (
-    <Layout>
+    <React.Fragment>
     <p id="about">
       We are passionate about cooking and sharing our recipes with the world.
     </p>
@@ -108,7 +107,7 @@ class About extends React.Component {
       </div>
     </div>
     <Credit word="pizza" link="https://codepen.io/feuerbird29" name="Ana Toma" />
-    </Layout>
+    </React.Fragment>
     )
   }
 }

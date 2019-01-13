@@ -1,9 +1,8 @@
 import React from 'react'
-import Layout from '../components/layout'
 import Credit from '../components/credit'
 
 const IndexPage = () => (
-  <Layout>
+  <React.Fragment>
     <h1 id="welcome">welcome to our cookbook</h1>
     <div className="box">
       <div className="pan">
@@ -16,7 +15,7 @@ const IndexPage = () => (
       </div>
     </div>
     <Credit word="emoji" link="https://codepen.io/mikemang" name="Mike Mangialardi" />
-  </Layout>
+  </React.Fragment>
 )
 
 export default IndexPage

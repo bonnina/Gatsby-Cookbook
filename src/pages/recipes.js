@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { navigate } from "gatsby"
-import Layout from '../components/layout'
 import { Link } from '@reach/router'
 import decode from 'jwt-decode'
 
@@ -54,7 +53,7 @@ class Recipes extends React.Component {
   render() {
     const { data } = this.props;
     return (
-    <Layout>
+    <React.Fragment>
     {data.allMarkdownRemark.edges.map(recipe => (
       <div key={recipe.node.id} className="recList">
         <h2 className="recHeader"> {recipe.node.frontmatter.title} </h2>
@@ -66,7 +65,7 @@ class Recipes extends React.Component {
         <hr/>
       </div>
     ))}
-  </Layout>
+  </React.Fragment>
   )
   }
 }
